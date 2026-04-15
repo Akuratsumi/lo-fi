@@ -8,23 +8,27 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '8.0.x'
 
       - name: Restore workloads
+        working-directory: LoFiLearn/LoFiLearn.App
         run: dotnet workload restore
 
       - name: Publish portable EXE
-        run: dotnet publish LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+        working-directory: LoFiLearn/LoFiLearn.App
+        run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 
       - name: Upload EXE artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: LoFiLearn-Native-Portable
           path: LoFiLearn/LoFiLearn.App/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish/LoFiLearn.exe
