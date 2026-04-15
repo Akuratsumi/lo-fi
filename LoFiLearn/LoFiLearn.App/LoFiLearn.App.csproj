@@ -10,7 +10,8 @@
     <PublishReadyToRun>false</PublishReadyToRun>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>false</EnableMsixTooling>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <WindowsPackageType>None</WindowsPackageType>
   </PropertyGroup>
 
   <ItemGroup>
