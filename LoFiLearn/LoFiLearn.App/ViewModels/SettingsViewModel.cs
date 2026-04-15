@@ -18,11 +18,14 @@ public sealed partial class SettingsViewModel : BaseViewModel
         _soundService = soundService;
         _appSettings = appSettings;
 
+        AvailableThemes = new ObservableCollection<string>(_themeService.ThemeNames);
         AvailableLanguages = new ObservableCollection<string> { "en-US", "ru-RU" };
         SelectedLanguage = ApplicationLanguages.PrimaryLanguageOverride ?? "en-US";
         SelectedTheme = _themeService.ActiveTheme;
         Volume = _appSettings.Volume;
     }
+
+    public ObservableCollection<string> AvailableThemes { get; }
 
     public ObservableCollection<string> AvailableLanguages { get; }
 
