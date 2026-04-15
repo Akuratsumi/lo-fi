@@ -19,7 +19,7 @@
                                 <StackPanel Spacing="10">
                                     <TextBlock Text="{x:Bind Title}" Style="{StaticResource TitleMediumStyle}" />
                                     <TextBlock Text="{x:Bind Steps.Count, Mode=OneWay}" Style="{StaticResource BodyStyle}" />
-                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{x:Bind ViewModel.RemoveGuideCommand}" CommandParameter="{Binding}" />
+                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{Binding DataContext.ViewModel.RemoveGuideCommand, ElementName=PageRoot}" CommandParameter="{Binding}" />
                                 </StackPanel>
                             </Border>
                         </DataTemplate>

@@ -22,7 +22,7 @@
                                         <TextBlock Text="Items count:" Style="{StaticResource BodyStyle}" />
                                         <TextBlock Text="{x:Bind Items.Count}" Style="{StaticResource BodyStyle}" />
                                     </StackPanel>
-                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{x:Bind ViewModel.RemoveBatchCommand}" CommandParameter="{Binding}" />
+                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{Binding DataContext.ViewModel.RemoveBatchCommand, ElementName=PageRoot}" CommandParameter="{Binding}" />
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
