@@ -1,0 +1,12 @@
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/bin/Debug/net8.0/LoFiLearn.Core.deps.json
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/bin/Debug/net8.0/LoFiLearn.Core.dll
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/bin/Debug/net8.0/LoFiLearn.Core.pdb
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.AssemblyInfoInputs.cache
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.AssemblyInfo.cs
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.csproj.CoreCompileInputs.cache
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.sourcelink.json
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.dll
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/refint/LoFiLearn.Core.dll
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/LoFiLearn.Core.pdb
+/workspaces/lo-fi/LoFiLearn/LoFiLearn.Core/obj/Debug/net8.0/ref/LoFiLearn.Core.dll

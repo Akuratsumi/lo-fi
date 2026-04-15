@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <UseWinUI>true</UseWinUI>
+    <WindowsAppSDKVersion>1.5.0</WindowsAppSDKVersion>
+    <ApplicationManifest>Package.appxmanifest</ApplicationManifest>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <EnableMsixAppx>false</EnableMsixAppx>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <SelfContained Condition="'$(OS)' == 'Windows_NT'">true</SelfContained>
+    <RuntimeIdentifier Condition="'$(OS)' == 'Windows_NT'">win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoFiLearn.Core\LoFiLearn.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+    <Page Include="MainWindow.xaml" />
+    <Page Include="Pages\SurveyPage.xaml" />
+    <Page Include="Pages\FlashcardsPage.xaml" />
+    <Page Include="Pages\DragDropPage.xaml" />
+    <Page Include="Pages\StepGuidePage.xaml" />
+    <Page Include="Pages\MatchingPage.xaml" />
+    <Page Include="Pages\SortingPage.xaml" />
+    <Page Include="Pages\SettingsPage.xaml" />
+    <Page Include="Pages\EmptyStatePage.xaml" />
+    <Page Include="Resources\Styles.xaml" />
+    <Page Include="Themes\DefaultTheme.xaml" />
+    <Page Include="Themes\ForestTheme.xaml" />
+    <Page Include="Themes\TwilightTheme.xaml" />
+    <Page Include="Themes\BlossomTheme.xaml" />
+    <Page Include="Themes\MatchaTheme.xaml" />
+    <Page Include="Themes\SunsetTheme.xaml" />
+    <Page Include="Themes\CoastalTheme.xaml" />
+    <Page Include="Themes\StoneTheme.xaml" />
+    <Page Include="Themes\NavyTheme.xaml" />
+    <Page Include="Themes\OliveTheme.xaml" />
+    <Content Include="Strings\en-US\Resources.resw" />
+    <Content Include="Strings\ru-RU\Resources.resw" />
+    <Content Include="Assets\noise.png" />
+    <Content Include="Assets\Sounds\pop.wav" />
+  </ItemGroup>
+</Project>

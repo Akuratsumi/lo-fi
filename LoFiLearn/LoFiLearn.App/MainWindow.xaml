@@ -1,0 +1,55 @@
+<Window
+    x:Class="LoFiLearn.App.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LoFiLearn.App"
+    xmlns:vm="using:LoFiLearn.App.ViewModels"
+    Title="LoFiLearn"
+    Width="1280"
+    Height="820"
+    MinWidth="980"
+    MinHeight="700">
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
+        <Canvas>
+            <Rectangle Fill="{StaticResource NoiseBrush}" Opacity="0.03" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </Canvas>
+
+        <Grid RowDefinitions="Auto,*">
+            <Border x:Name="CustomTitleBar" Background="Transparent" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+            <Grid Grid.Row="1">
+                <NavigationView
+                    x:Name="NavView"
+                    PaneDisplayMode="Left"
+                    IsPaneOpen="True"
+                    IsBackButtonVisible="Collapsed"
+                    PaneWidth="260"
+                    OpenPaneLength="260"
+                    SelectionFollowsFocus="Enabled"
+                    MenuItemInvoked="NavView_MenuItemInvoked"
+                    Header="LoFiLearn"
+
+
+                    <NavigationView.MenuItems>
+                        <NavigationViewItem x:Uid="NavSurvey" Content="Survey" Tag="Survey" Icon="List" />
+                        <NavigationViewItem x:Uid="NavFlashcards" Content="Flashcards" Tag="Flashcards" Icon="AllApps" />
+                        <NavigationViewItem x:Uid="NavDragDrop" Content="Drag & Drop" Tag="DragDrop" Icon="View" />
+                        <NavigationViewItem x:Uid="NavStepGuide" Content="Step Guide" Tag="StepGuide" Icon="Step" />
+                        <NavigationViewItem x:Uid="NavMatching" Content="Matching" Tag="Matching" Icon="Puzzle" />
+                        <NavigationViewItem x:Uid="NavSorting" Content="Sorting" Tag="Sorting" Icon="Filter" />
+                    </NavigationView.MenuItems>
+
+                    <NavigationView.PaneFooter>
+                        <Button x:Uid="NavSettingsButton" Content="Settings" Tag="Settings" Style="{StaticResource SecondaryPillButton}" Click="NavFooterButton_Click" />
+                    </NavigationView.PaneFooter>
+
+                    <Frame x:Name="ContentFrame" Margin="24" />
+                </NavigationView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

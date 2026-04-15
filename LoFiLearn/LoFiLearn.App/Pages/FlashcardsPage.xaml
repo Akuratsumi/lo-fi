@@ -1,0 +1,31 @@
+<Page
+    x:Name="PageRoot"
+    x:Class="LoFiLearn.App.Pages.FlashcardsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:LoFiLearn.Core.Models"
+    Background="Transparent">
+
+    <Grid Padding="24">
+        <Border Style="{StaticResource LoFiCardStyle}" Shadow="{StaticResource CardShadow}">
+            <StackPanel Spacing="20">
+                <TextBlock x:Uid="FlashcardsPageHeader" Text="Flashcards" Style="{StaticResource TitleLargeStyle}" />
+                <TextBlock x:Uid="FlashcardsPageSubheader" Text="Study with gentle cards and quick flips." Style="{StaticResource BodyStyle}" />
+                <Button x:Uid="FlashcardsPageAddButton" Content="Add flashcard" Style="{StaticResource PrimaryPillButton}" Command="{x:Bind ViewModel.AddCardCommand}" />
+                <ItemsRepeater ItemsSource="{x:Bind ViewModel.Flashcards}">
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="models:FlashcardItem">
+                            <Border Style="{StaticResource LoFiCardStyle}" Padding="16" Margin="0,0,0,12">
+                                <StackPanel Spacing="12">
+                                    <TextBlock Text="{x:Bind Front}" Style="{StaticResource TitleMediumStyle}" />
+                                    <TextBlock Text="{x:Bind Back}" Style="{StaticResource BodyStyle}" />
+                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{x:Bind DataContext.ViewModel.RemoveCardCommand, ElementName=PageRoot}" CommandParameter="{Binding}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

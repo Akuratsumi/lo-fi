@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/LoFiLearn/">
+    <Project Path="LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj" />
+    <Project Path="LoFiLearn/LoFiLearn.Core/LoFiLearn.Core.csproj" />
+  </Folder>
+</Solution>

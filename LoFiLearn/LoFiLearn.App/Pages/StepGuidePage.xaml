@@ -1,0 +1,31 @@
+<Page
+    x:Name="PageRoot"
+    x:Class="LoFiLearn.App.Pages.StepGuidePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:LoFiLearn.Core.Models"
+    Background="Transparent">
+
+    <Grid Padding="24">
+        <Border Style="{StaticResource LoFiCardStyle}" Shadow="{StaticResource CardShadow}">
+            <StackPanel Spacing="20">
+                <TextBlock x:Uid="StepGuidePageHeader" Text="Step Guide" Style="{StaticResource TitleLargeStyle}" />
+                <TextBlock x:Uid="StepGuidePageSubheader" Text="Build step-by-step workflows with soft guidance." Style="{StaticResource BodyStyle}" />
+                <Button x:Uid="StepGuidePageAddButton" Content="Add guide" Style="{StaticResource PrimaryPillButton}" Command="{x:Bind ViewModel.AddGuideCommand}" />
+                <ItemsRepeater ItemsSource="{x:Bind ViewModel.StepGuides}">
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="models:StepGuideItem">
+                            <Border Style="{StaticResource LoFiCardStyle}" Padding="16" Margin="0,0,0,12">
+                                <StackPanel Spacing="10">
+                                    <TextBlock Text="{x:Bind Title}" Style="{StaticResource TitleMediumStyle}" />
+                                    <TextBlock Text="{x:Bind Steps.Count, Mode=OneWay}" Style="{StaticResource BodyStyle}" />
+                                    <Button Content="Remove" Style="{StaticResource SecondaryPillButton}" Command="{x:Bind DataContext.ViewModel.RemoveGuideCommand, ElementName=PageRoot}" CommandParameter="{Binding}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

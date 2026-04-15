@@ -1,0 +1,138 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:media="using:Microsoft.UI.Xaml.Media">
+
+    <SolidColorBrush x:Key="PageBackgroundBrush" Color="#FDFBF7" />
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="#FFFFFF" Opacity="0.8" />
+    <SolidColorBrush x:Key="CardBorderBrush" Color="#30FFFFFF" />
+    <SolidColorBrush x:Key="BorderLightBrush" Color="#DAD1C7" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#82654B" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#1F1A17" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#5C524D" />
+    <SolidColorBrush x:Key="TextTertiaryBrush" Color="#8E857B" />
+    <SolidColorBrush x:Key="InputFillBrush" Color="#FFFFFFFF" Opacity="0.60" />
+    <SolidColorBrush x:Key="IconStrokeBrush" Color="#1F1A17" />
+    <SolidColorBrush x:Key="AccentBackgroundBrush" Color="#F0EAE1" />
+    <SolidColorBrush x:Key="SwatchRingBrush" Color="#82654B" />
+
+    <ImageBrush x:Key="NoiseBrush" ImageSource="Assets/noise.png" Stretch="Fill" Opacity="0.03" />
+
+    <DropShadow x:Key="CardShadow" BlurRadius="28" ShadowOpacity="0.12" OffsetY="12" Color="#000000" />
+
+    <Style x:Key="TitleLargeStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="LineHeight" Value="36" />
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+        <Setter Property="LetterSpacing" Value="-0.5" />
+    </Style>
+
+    <Style x:Key="TitleMediumStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="LineHeight" Value="28" />
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+    </Style>
+
+    <Style x:Key="BodyStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="LineHeight" Value="20" />
+        <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
+    </Style>
+
+    <Style x:Key="CaptionStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="{StaticResource TextTertiaryBrush}" />
+    </Style>
+
+    <Style x:Key="LoFiCardStyle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="32" />
+        <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="Shadow" Value="{StaticResource CardShadow}" />
+    </Style>
+
+    <Style x:Key="PrimaryPillButton" TargetType="Button">
+        <Setter Property="CornerRadius" Value="40" />
+        <Setter Property="Padding" Value="16,12" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F0EAE1" Offset="0" />
+                    <GradientStop Color="#E8E0D5" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="CompressionMode" Value="Scale" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" CornerRadius="40" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SecondaryPillButton" TargetType="Button" BasedOn="{StaticResource PrimaryPillButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+    </Style>
+
+    <Style x:Key="IconButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource IconStrokeBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="12">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBoxStyle.LoFi" TargetType="TextBox">
+        <Setter Property="CornerRadius" Value="16" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderLightBrush}" />
+        <Setter Property="Background" Value="{StaticResource InputFillBrush}" />
+        <Setter Property="Padding" Value="14,12" />
+    </Style>
+
+    <Style x:Key="ThemeSwatchStyle" TargetType="Button">
+        <Setter Property="Width" Value="48" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="CornerRadius" Value="24" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="{StaticResource AccentBackgroundBrush}" />
+    </Style>
+
+    <Style x:Key="EmptyStateText" TargetType="TextBlock" BasedOn="{StaticResource BodyStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="IconPathStyle" TargetType="Path">
+        <Setter Property="Stroke" Value="{StaticResource IconStrokeBrush}" />
+        <Setter Property="StrokeThickness" Value="1.8" />
+        <Setter Property="StrokeLineJoin" Value="Round" />
+        <Setter Property="StrokeStartLineCap" Value="Round" />
+        <Setter Property="StrokeEndLineCap" Value="Round" />
+    </Style>
+</ResourceDictionary>
