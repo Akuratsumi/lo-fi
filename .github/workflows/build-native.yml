@@ -1,0 +1,30 @@
+name: Build Native Portable EXE
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore workloads
+        run: dotnet workload restore
+
+      - name: Publish portable EXE
+        run: dotnet publish LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LoFiLearn-Native-Portable
+          path: LoFiLearn/LoFiLearn.App/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish/LoFiLearn.exe
