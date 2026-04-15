@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
-using LoFiLearn.Core.Services;
 using LoFiLearn.App.Services;
+using LoFiLearn.App.ViewModels;
 
 namespace LoFiLearn.App;
 
