@@ -23,17 +23,18 @@ jobs:
         run: dotnet workload restore --project LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj
 
       - name: Publish portable EXE (with diagnostics)
-        run: dotnet publish LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -v diag -bl:binlog/build.binlog
+        run: dotnet publish LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -v diag 2>&1 | tee publish.log
 
       - name: Upload EXE artifact
+        if: success()
         uses: actions/upload-artifact@v5
         with:
           name: LoFiLearn-Native-Portable
           path: LoFiLearn/LoFiLearn.App/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish/LoFiLearn.exe
 
-      - name: Upload binary log
+      - name: Upload build log
         if: always()
         uses: actions/upload-artifact@v5
         with:
-          name: Build-Binary-Log
-          path: LoFiLearn/LoFiLearn.App/binlog/build.binlog
+          name: Build-Log
+          path: publish.log
