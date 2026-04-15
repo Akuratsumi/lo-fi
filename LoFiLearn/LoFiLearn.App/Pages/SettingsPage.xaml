@@ -15,8 +15,8 @@
                     <TextBlock Text="Theme" Style="{StaticResource TitleMediumStyle}" />
                     <ItemsRepeater ItemsSource="{x:Bind ViewModel.AvailableThemes}">
                         <ItemsRepeater.ItemTemplate>
-                            <DataTemplate x:DataType="x:String" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-                                <Button Style="{StaticResource ThemeSwatchStyle}" Content="{x:Bind .}" Command="{Binding DataContext.ViewModel.ApplyThemeCommand, ElementName=PageRoot}" CommandParameter="{x:Bind .}" />
+                            <DataTemplate x:DataType="x:String">
+                                <Button Style="{StaticResource ThemeSwatchStyle}" Content="{Binding}" Command="{Binding DataContext.ViewModel.ApplyThemeCommand, ElementName=PageRoot}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>
                     </ItemsRepeater>
