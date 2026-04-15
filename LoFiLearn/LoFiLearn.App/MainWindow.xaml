@@ -31,9 +31,7 @@
                     OpenPaneLength="260"
                     SelectionFollowsFocus="Enabled"
                     MenuItemInvoked="NavView_MenuItemInvoked"
-                    Header="LoFiLearn"
-
-
+                    Header="LoFiLearn">
                     <NavigationView.MenuItems>
                         <NavigationViewItem x:Uid="NavSurvey" Content="Survey" Tag="Survey" Icon="List" />
                         <NavigationViewItem x:Uid="NavFlashcards" Content="Flashcards" Tag="Flashcards" Icon="AllApps" />
