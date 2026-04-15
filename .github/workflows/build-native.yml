@@ -20,14 +20,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore workloads
-        run: |
-          cd LoFiLearn/LoFiLearn.App
-          dotnet workload restore
+        run: dotnet workload restore --project LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj
 
       - name: Publish portable EXE
-        run: |
-          cd LoFiLearn/LoFiLearn.App
-          dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+        run: dotnet publish LoFiLearn/LoFiLearn.App/LoFiLearn.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v5
