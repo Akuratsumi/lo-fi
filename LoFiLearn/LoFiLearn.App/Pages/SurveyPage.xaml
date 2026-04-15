@@ -16,7 +16,7 @@
                 <Button x:Uid="SurveyPageAddButton" Content="Add question" Style="{StaticResource PrimaryPillButton}" Command="{x:Bind ViewModel.AddItemCommand}" />
                 <ListView ItemsSource="{x:Bind ViewModel.SurveyItems}" SelectionMode="None">
                     <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="models:SurveyItem" xmlns:models="using:LoFiLearn.Core.Models">
+                        <DataTemplate x:DataType="models:SurveyItem">
                             <Border Style="{StaticResource LoFiCardStyle}" Padding="16" Margin="0,0,0,12">
                                 <StackPanel Spacing="10">
                                     <TextBlock Text="{x:Bind Prompt}" Style="{StaticResource TitleMediumStyle}" />
